@@ -22,33 +22,36 @@
       </handler>
    </extension>
 
-   <extension
-         point="org.eclipse.ui.menus">
-      <menuContribution
-            allPopups="false"
-            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
-         <menu
-               id="menu.sample.id"
-               label="Sample &amp;Menu">
-            <command
-                  commandId="command.sample.id"
-                  mnemonic="S"
-                  id="command.sample.menu.memonic.id">
-            </command>
-         </menu>
-      </menuContribution>
-      <menuContribution
-            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
-         <toolbar
-               id="toolbar.sample.id">
-            <command
-                  commandId="command.sample.id"
-                  icon="icons/sample.gif"
-                  tooltip="&amp;sample Sample Action"
-                  id="sampleAction.id">
-            </command>
-         </toolbar>
-      </menuContribution>
+   <extension point="org.eclipse.ui.menus">
+	  <menuContribution locationURI="popup:org.eclipse.jdt.ui.PackageExplorer">
+	      <command commandId="command.sample.id"
+	        label="Export design" style="push" mnemonic="E">
+	         <visibleWhen>
+	                <with variable="activeMenuSelection">
+	                    <iterate ifEmpty="false">
+	                        <adapt type="org.eclipse.core.resources.IResource">
+	                                <test property="org.eclipse.core.resources.name" value="*.java" />
+	                        </adapt>
+	                    </iterate>
+	                </with>
+	         </visibleWhen>
+	      </command>
+	  </menuContribution>      
+	  <menuContribution locationURI="popup:org.eclipse.ui.navigator.ProjectExplorer#PopupMenu?after=additions">
+	      <command commandId="command.sample.id"
+	        label="Export design" style="push" mnemonic="E">
+	         <visibleWhen>
+	                <with variable="activeMenuSelection">
+	                    <iterate ifEmpty="false">
+	                        <adapt type="org.eclipse.core.resources.IResource">
+	                                <test property="org.eclipse.core.resources.name" value="*.java" />
+	                        </adapt>
+	                    </iterate>
+	                </with>
+	         </visibleWhen>
+	      </command>
+	  </menuContribution>            
+      
    </extension>
 
 </plugin>
