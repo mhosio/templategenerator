@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/templategenerator.feature_0.0.0.jar" id="templategenerator.feature" version="0.0.0">
+    <category name="templategenerator"/>
+   </feature>
+   <feature url="features/templategenerator.feature.source_0.0.0.jar" id="templategenerator.feature.source" version="0.0.0">
+    <category name="templategenerator Developer Resources"/>
+   </feature>
+</site>
