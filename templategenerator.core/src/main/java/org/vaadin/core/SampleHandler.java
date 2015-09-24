@@ -54,7 +54,6 @@ public class SampleHandler extends AbstractHandler {
             	TextTransfer textTransfer=TextTransfer.getInstance();
             	clipBoard.setContents(new Object[]{template}, new Transfer[]{textTransfer});
             	clipBoard.dispose();
-    			MessageDialog.openInformation(window.getShell(), "Finished", "Design copied to clipboard");
         	}
 		} catch (Exception e) {
 			e.printStackTrace();
