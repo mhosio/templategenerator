@@ -139,7 +139,6 @@
   </profiles>
   <modules>
     <module>templategenerator.core</module>
-    <module>templategenerator.test</module>
     <module>templategenerator.feature</module>
     <module>templategenerator.site</module>
   </modules>
